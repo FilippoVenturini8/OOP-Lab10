@@ -23,7 +23,7 @@ public final class Test {
      * modo alternato.
      * 
      * Alla pressione del pulsante "stop", il conteggio si blocchi, e i tre
-     * pulsanti vengano disabilitati. Per far partire l'applicazioni si tolga il
+     * pulsanti vengano disabilitati. Per far partire l'applicazione si tolga il
      * commento nel main qui sotto.
      * 
      * Suggerimenti: - si mantenga la struttura dell'esercizio precedente - per
@@ -39,6 +39,6 @@ public final class Test {
      * 
      */
     public static void main(final String... args) {
-        // new ConcurrentGUI();
+         new ConcurrentGUI();
     }
 }
