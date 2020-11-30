@@ -11,12 +11,32 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-public final class ConcurrentGUI extends JFrame {
+public class ConcurrentGUI extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private static final double WIDTH_PERC = 0.2;
     private static final double HEIGHT_PERC = 0.1;
     private final  JLabel lbl = new JLabel();
+    private final JButton up = new JButton("up");
+    private final JButton stop = new JButton("stop");
+    private final JButton down = new JButton("down");
+    private final Agent counter = new Agent();
+
+    public JButton getUp() {
+        return up;
+    }
+
+    public JButton getStop() {
+        return stop;
+    }
+
+    public JButton getDown() {
+        return down;
+    }
+
+    public Agent getCounter() {
+        return counter;
+    }
 
     public ConcurrentGUI() {
         super();
@@ -25,11 +45,7 @@ public final class ConcurrentGUI extends JFrame {
         this.setSize((int) (screenSize.getWidth() * WIDTH_PERC), (int) (screenSize.getHeight() * HEIGHT_PERC));
         final JPanel canvas = new JPanel();
         this.add(canvas);
-        final JButton up = new JButton("up");
-        final JButton stop = new JButton("stop");
-        final JButton down = new JButton("down");
 
-        final Agent counter = new Agent();
         new Thread(counter).start();
 
         up.addActionListener(e -> {
